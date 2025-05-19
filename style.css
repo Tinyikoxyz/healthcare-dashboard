@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Manrope:wght@200..800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+:root{
+    --font-color: #072635;
+    --bg-color: #F6F7F8;
+    --hover-color: #01F0D0;
+    --scrollbar-color: #072635;
+    --light-blue: #E0F3FA;
+    --light-pink: #FFE6E9;
+    --pink: #FFE6F1;
+    
+}
+body{
+    background: var(--bg-color);
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+   
+    
+}
+header .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem;
+    margin: 10px auto;
+    position: relative;
+    background-color: #Fff;
+    height: 30px;
+    max-width: 1200px;
+    border-radius: 8rem;
+
+}
+header .navbar{
+    display: flex;
+    align-items: center;
+    transition: ease-in-out;
+}
+header .navbar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 5px;
+    text-decoration: none;
+    color: var(--font-color);
+}
+header .navbar a:hover{
+    background-color: var(--hover-color);
+    border-radius: 5rem;
+    padding: 8px;
+}
+.menu-toggle{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--font-color);
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 1px solid #777;
+    padding: 5px;
+}
+
+.doctor-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile img {
+    width: 24px;
+    height: 24px;
+}
+
+.profile .info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.profile .name {
+    font-weight: bold;
+    color: var(--font-color);
+}
+
+.profile .role {
+    color: #777;
+}
+
+.patients {
+    margin-top: 20px;
+    padding: 20px 15px;
+    margin-left: 50px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+
+
+}
+
+/* Custom scrollbar */
+.patients::-webkit-scrollbar {
+    width: 8px;
+}
+
+.patients::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 10px;
+}
+.patients .search-option{
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+.patients .search-option i{
+    font-size: 25px;
+}
+.patient-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.patient-list .patient{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    
+}
+.patient-list .patient-pic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.patient-list img{
+    width: 24px;
+    height: 24px;   
+}
+.patient-list .info{
+     display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+.main-content {
+    margin-top: 100px;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+/*Diagonstic history*/
+.diagnostic-history {
+    padding: 15px;
+    width: 466px;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 16px;
+    opacity: 1;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+/* health-metrics */
+.health-metrics{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.health-metrics .health-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    
+}
+.health-metrics .health-container img{
+    height: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.health-metrics .health-container .info :nth-child(1){
+    margin-top: 5px;
+    font-size: 12px;
+}
+.health-metrics .health-container .info :nth-child(3){
+    margin-top: 5px;
+    font-size: 10px;
+}
+.health-metrics .health-container .info h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.health-container,
+.respitory-rate,
+.temperature-rate,
+.Heart-rate{
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+.health-metrics .health-container .respitory-rate{
+    background: var(--light-blue);
+}
+.health-metrics .health-container .temperature-rate{
+    background: var(--light-pink);
+}
+.health-metrics .health-container .Heart-rate{
+    background: var(--pink);
+}
+
+/* diagnostic list */
+.diagnostic-list{
+    padding: 15px;
+    width: 496px;
+    background: #fff;
+    
+}
+table{
+    height: 100px;
+}
+.diagnostic-list table th,td{
+    padding: 10px;
+    text-align: left;
+    border: none;
+}
+.diagnostic-history table,th{
+    background: #F6F7F8;
+    border: none;
+    border-radius: 5px;
+}
+.profile-details{
+    margin-right: 100px;
+    background: #fff;
+    margin-top: 30px;
+    padding: 10px;
+    width: 300px;
+    border-radius: 16px;
+}
+.profile-details .profile-img img{
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+.profile-details .profile-img h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.profile-details .info-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    
+}
+.profile-details .info-box .box-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    text-align: left;
+}
+.content-container-two {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+.lab-results{
+    background: #fff;
+    width: 300px;
+    padding: 10px;
+    border-radius: 16px;
+}
+.lab-results h2{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.lab-results .results{
+    height: 130px;
+    overflow-y: auto;
+
+    
+}
+.lab-results .results .results-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    text-align: left;
+    padding: 10px;
+}
+.lab-results .results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lab-results .results::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.lab-results .results::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsiveness */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .patients {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    .diagnostic-history,
+    .diagnostic-list {
+        width: 100%;
+    }
+
+    .health-metrics .health-container {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .patients {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .health-metrics .health-container {
+        grid-template-columns: 1fr;
+    }
+
+    .header .flex {
+        padding: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .content-container {
+        width: 100%;
+    }
+}
+@media (max-width: 760px){
+    header .flex{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        height: auto;
+    }
+    .menu-toggle{
+        display: block;
+        margin-left: auto;
+
+    }
+    header .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+        
+    }
+    header .navbar.show{
+        display: flex;
+    } 
+    header .navbar a{
+        width: 100%;
+        padding: 10px 0;
+    }
+    .profile{
+        display: none;
+    }
+.patients {
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 50px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+
+
+}
+}
